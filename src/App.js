@@ -30,30 +30,29 @@ function App() {
 
   }
 
-  const toggleMode = ()=>{
-    if(mode ==='light')
-{
-  setMode('dark');
-  document.body.style.backgroundColor='#042743';
-  showAlert("Dark mode has been enabled","success");
- //document.title="Textutils - Dark Mode"; 
- /*setInterval(()=>{
-  document.title="Textutils is Amazing mode";
- },2000);
+  
 
- setInterval(()=>{
-  document.title="Textutils install Now";
- },1500);*/
-}  
 
-else{
-  setMode('light');
-  document.body.style.backgroundColor='white';
-  showAlert("Light mode has been enabled","success");
-// document.title="Textutils - Light Mode"; 
+const toggleMode = ()=>{
+  if(mode === 'light'){
+    setMode('dark');
+    document.body.style.backgroundColor = '#042743';
+    showAlert("Dark mode has been enabled", "success");
+    // document.title = 'TextUtils - Dark Mode';
+    // setInterval(() => {
+    //   document.title = 'TextUtils is Amazing Mode';
+    // }, 2000);
+    // setInterval(() => {
+    //   document.title = 'Install TextUtils Now';
+    // }, 1500);
+  }
+  else{
+    setMode('light');
+    document.body.style.backgroundColor = 'white';
+    showAlert("Light mode has been enabled", "success");
+    // document.title = 'TextUtils - Light Mode';
+  }
 }
-}
-
   return (
     <>
     <Router>
@@ -62,10 +61,10 @@ else{
      <div className="container my-3" >
      <Switch>
           <Route exact path="/about">
-            <About />
+            <About mode={mode}/>
           </Route>
           <Route exact path="/">
-           <TextForm showAlert={showAlert} heading={"Enter the text to analyze below"} mode={mode}/>
+           <TextForm showAlert={showAlert} heading={"Try TextUtils - Word Counter, Character Counter,Remove Extra Spaces"} mode={mode}/>
           </Route>
     </Switch>
 
