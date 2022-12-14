@@ -56,7 +56,7 @@ const toggleMode = ()=>{
   return (
     <>
     <Router>
-     <Navbar title={"Textutils"} aboutText={"About"} mode={mode}  toggleMode={toggleMode}/>
+     <Navbar title={"Textutils (Text Analysis Tool)"} aboutText={"About"} mode={mode}  toggleMode={toggleMode}/>
      <Alert alert={alert}/>
      <div className="container my-3" >
      <Switch>
